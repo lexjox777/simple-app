@@ -7,7 +7,7 @@ This is a Simple App using Streamlit package
 Please ensure to install (preferably) the Anaconda Distribution (https://www.anaconda.com/download). Follow the instructions
 
 1. Navigate to your working directory and clone the repository
-  """cd to your working directory"""
+  ```cd to your working directory```
 2. Clone the repository
   ```git clone https://github.com/lexjox777/simple-app.git```
 
