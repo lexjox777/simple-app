@@ -8,6 +8,7 @@ DATE_COLUMN = 'date/time'
 DATA_URL = ('https://s3-us-west-2.amazonaws.com/'
          'streamlit-demo-data/uber-raw-data-sep14.csv.gz')
 
+@st.cache_data 
 def load_data(nrows):
     data = pd.read_csv(DATA_URL, nrows=nrows)
     lowercase = lambda x: str(x).lower()
@@ -17,7 +18,7 @@ def load_data(nrows):
 
 # Create a text element and let the reader know the data is loading.
 data_load_state = st.text('Loading data...')
-# data_load_state.text("Done! (using st.cache_data)")
+data_load_state.text("Done! (using st.cache_data)")
 
 # Load 10,000 rows of data into the dataframe.
 data = load_data(10000)
@@ -28,9 +29,6 @@ data_load_state.text('Loading data...done!')
 
 st.write("Most objects") # df, err, func, keras!
 st.write(["st", "is <", 3]) # see *
-st.write_stream(my_generator)
-st.write_stream(my_llm_stream)
-
 st.text("Fixed width text")
 st.markdown("_Markdown_") # see *
 st.latex(r""" e^{i\pi} + 1 = 0 """)
@@ -38,4 +36,3 @@ st.title("My title")
 st.header("My header")
 st.subheader("My sub")
 st.code("for i in range(8): foo()")
-# *optional kwarg unsafe_allow_html = True;
